@@ -1,0 +1,64 @@
+{
+  "name": "composer/composer",
+  "type": "library",
+  "description": "Composer helps you declare, manage and install dependencies of PHP projects. It ensures you have the right stack everywhere.",
+  "keywords": [
+    "package",
+    "dependency",
+    "autoload"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Hanna Rassokha",
+      "email": "test@test.de"
+    }
+  ],
+
+  "require-dev": {
+    "codeception/codeception": "*",
+    "ext-zip": "*",
+    "codeception/module-webdriver": "^1.1"
+},
+  "suggest": {
+    "ext-openssl": "Enabling the openssl extension allows you to access https URLs for repositories and packages",
+    "ext-zip": "Enabling the zip extension allows you to unzip archives",
+    "ext-zlib": "Allow gzip compression of HTTP requests",
+    "ext-SimpleXML": "For Firefox profile creation"
+  },
+  "config": {
+    "platform": {
+      "php": "7.4"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.10-dev"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Composer\\": "src/Composer"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Composer\\Test\\": "tests/Composer/Test"
+    }
+  },
+  "bin": [
+    "bin/composer"
+  ],
+  "scripts": {
+    "compile": "@php -dphar.readonly=0 bin/compile",
+    "test": "simple-phpunit"
+  },
+  "scripts-descriptions": {
+    "compile": "Compile composer.phar",
+    "test": "Run all tests"
+  },
+  "support": {
+    "issues": "https://github.com/composer/composer/issues",
+    "irc": "irc://irc.freenode.org/composer"
+  }
+}
